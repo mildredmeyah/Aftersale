@@ -7,10 +7,15 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
 
+import { auth } from './src/config/firebase';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  //function to register new user with email and password
+  //function to login user with email and password
+  //function to log out the user
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
