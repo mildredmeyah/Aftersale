@@ -8,6 +8,7 @@ import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
 
 import { auth } from './src/config/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
 const Stack = createNativeStackNavigator();
