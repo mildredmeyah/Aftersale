@@ -1,20 +1,21 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import Header from '../components/Header'
 
-const Header = ({title}) => {
+const Dashboard = () => {
   return (
     <View style={styles.container}>
-        <Text>{title}</Text>
-        <Text>Manage your business with better information</Text>
+        <Header title='Home' />
+        <Text>Welcome to the app!</Text>
     </View>
   )
 }
 
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         padding: 15,
     },
 })
 
-export default Header
+export default Dashboard
