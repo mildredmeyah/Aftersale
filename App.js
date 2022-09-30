@@ -9,6 +9,7 @@ import Dashboard from './src/screens/Dashboard';
 
 import { auth } from './src/config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
 
 
 const Stack = createNativeStackNavigator();
