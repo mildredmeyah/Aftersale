@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
+import Splash from './src/screens/Splash'
 
 import { auth } from './src/config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -20,7 +21,10 @@ export default function App() {
   //function to log out the user
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='Splash'>
+        <Stack.Screen name='Splash' options={{title:'splash'}}>
+          {(props) => <Splash {...props} />}
+        </Stack.Screen>
         <Stack.Screen name='Login' options={{title:'Login'}}>
           {(props) => <Login {...props} />}
         </Stack.Screen>
