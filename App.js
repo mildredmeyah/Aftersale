@@ -7,6 +7,7 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
 
+
 import { auth } from './src/config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';

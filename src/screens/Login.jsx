@@ -54,23 +54,26 @@ const Login = ({navigation}) => {
     <View style={styles.container}>
         <Header title='Login' />
         <View>
-            {errMsg === '' ? (<Text style={styles.goodErr}>Good to go</Text>) : (<Text style={styles.badErr}>{errMsg}</Text>)}
+            {errMsg === '' ? (<Text style={styles.goodErr}></Text>) : (<Text style={styles.badErr}>{errMsg}</Text>)}
         </View>
         <View>
             <View>
-                <Text>Email</Text>
-                <TextInput onChangeText={value => setEmail(value)} />
+
+                <TextInput  onChangeText={value => setEmail(value)} style={styles.input}  placeholder='Email' />
             </View>
 
             <View>
-                <Text>Password:</Text>
-                <TextInput onChangeText={value => setPassword(value)} />
+               
+                <TextInput onChangeText={value => setPassword(value)} style={styles.input}  placeholder='Password' secureTextEntry />
             </View>
 
-            <Button title='Login' onPress={loginWithEmail} />
-            <View>
-                <Text>Don't have an account?</Text>
-                <Button title='Register' onPress={() => navigation.navigate('Register')} />
+            <View style={styles.lgn}>
+            <Button Style={styles.btn} color="#96DED1"  title='Login' onPress={loginWithEmail} />
+            </View>
+            
+            <View style={styles.acc} >
+                <Text  style={styles.reg}  color="#96DED1" title='Register' onPress={() => navigation.navigate('Register')} >Not registered <Text style={styles.ed} >register</Text></Text>
+                
             </View>
 
         </View>
@@ -81,6 +84,16 @@ const Login = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         padding: 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 100,
+        marginLeft: 50,
+        backgroundColor: "#DFF1F3",
+        height: 500,
+        width: 300,
+        borderRadius: 20,
+        
+        
     },
     badErr: {
         backgroundColor: '#ff0000',
@@ -89,6 +102,48 @@ const styles = StyleSheet.create({
     goodErr: {
         backgroundColor: '#00ff00',
         color: '#ffffff',
+    },
+    input:{
+        borderWidth:  1,
+        backgroundColor: '#fff',
+        marginTop: 20,
+        width:200,
+        borderColor:'#96DED1',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 40,
+        borderRadius: 10,
+        color:'#A09999',
+    },
+    acc:{
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    lgn:{
+        marginTop: 20,
+
+        
+    },
+    reg:{
+    
+    },
+    fog:{
+        color:'#36EBCA',
+        marginTop: 20,
+        textDecorationLine: 'underline',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    btn:{
+        borderRadius:35,
+        borderRadius: 10,
+        width:100,
+    },
+    ed:{
+        color:'#36EBCA',
+        textDecorationLine: 'underline',
+
     },
 })
 
