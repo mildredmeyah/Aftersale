@@ -29,7 +29,7 @@ const logout = async() => {
     <View style={styles.container}>
         <Header title='Home' />
         <Text>{email}</Text>
-        <Button title='Logout' onPress={logout} />
+        <Button title='Logout' onPress={logout} color='#96DED1'/>
         <Text>Welcome to the app!</Text>
     </View>
   )
