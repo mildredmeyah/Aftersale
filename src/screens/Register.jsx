@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import Header from '../components/Header';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { TouchableOpacity } from 'react-native-web';
 
 const Register = ({navigation}) => {
     //states for error
@@ -81,7 +82,9 @@ const Register = ({navigation}) => {
                 <TextInput style={styles.input}  onChangeText={value => setConfirmPassword(value)}   placeholder='Confirm Password'  secureTextEntry/>
             </View >
             <View style={styles.lgn} >
-            <Button style={styles.btn } color="#96DED1" title='Register' onPress={registerWithEmail} />
+            <TouchableOpacity style={styles.btn } color="#96DED1" title='Register' onPress={registerWithEmail} >
+            <Text style={{color:'Black'}}>Register</Text>
+            </TouchableOpacity>
             </View>
             <View style={styles.acc} >
                 <Text color="#96DED1"onPress={() => navigation.navigate('Login')}>Already registered <Text style={styles.in} >login</Text></Text>
@@ -135,10 +138,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: 40,
         borderRadius: 10,
+        color:'#A09999',
+        paddingLeft: 20,
         
     },
     btn:{
-        width: 50,
+        borderRadius:35,
+        borderRadius: 10,
+        width:189,
+        height:46,
+        color:'white',
+        backgroundColor:'#96DED1',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     
     lgn:{

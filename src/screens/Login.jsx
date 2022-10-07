@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 
 import { auth } from '../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+
 
 const Login = ({navigation}) => {
    
@@ -51,8 +52,9 @@ const Login = ({navigation}) => {
 
 
   return (
+    <View style={{backgroundColor:''}} >
     <View style={styles.container}>
-        <Header title='Login' />
+         <Header title='Login' /> 
         <View>
             {errMsg === '' ? (<Text style={styles.goodErr}></Text>) : (<Text style={styles.badErr}>{errMsg}</Text>)}
         </View>
@@ -68,7 +70,9 @@ const Login = ({navigation}) => {
             </View>
 
             <View style={styles.lgn}>
-            <Button Style={styles.btn} color="#96DED1"  title='Login' onPress={loginWithEmail} />
+            <TouchableOpacity style={styles.btn} color="#96DED1"  onPress={loginWithEmail}>
+                <Text style={{color:'white'}}>Login</Text>
+            </TouchableOpacity>
             </View>
             
             <View style={styles.acc} >
@@ -77,6 +81,7 @@ const Login = ({navigation}) => {
             </View>
 
         </View>
+    </View>
     </View>
   )
 }
@@ -92,6 +97,7 @@ const styles = StyleSheet.create({
         height: 500,
         width: 300,
         borderRadius: 20,
+        
         
         
     },
@@ -114,6 +120,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 10,
         color:'#A09999',
+        paddingLeft: 20
     },
     acc:{
         marginTop: 20,
@@ -122,7 +129,8 @@ const styles = StyleSheet.create({
     },
     lgn:{
         marginTop: 20,
-
+        alignItems: 'center',
+        justifyContent: 'center',
         
     },
     reg:{
@@ -138,7 +146,13 @@ const styles = StyleSheet.create({
     btn:{
         borderRadius:35,
         borderRadius: 10,
-        width:100,
+        width:189,
+        height:46,
+        color:'white',
+        backgroundColor:'#96DED1',
+        alignItems: 'center',
+        justifyContent: 'center',
+        
     },
     ed:{
         color:'#36EBCA',
