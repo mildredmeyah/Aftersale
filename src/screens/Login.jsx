@@ -18,7 +18,7 @@ const Login = ({navigation}) => {
                 <TextInput />
             </View>
 
-            <Button title='Login' />
+            <Button title='Login' onPress={() => navigation.navigate('AddProduct')} />
             <View>
                 <Text>Don't have an account?</Text>
                 <Button title='Register' onPress={() => navigation.navigate('Register')} />
