@@ -68,7 +68,7 @@ const Product = () => {
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonQuality}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Update Quality</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Update Quantity</Text>
             </TouchableOpacity>
             </View>
             </View>        
