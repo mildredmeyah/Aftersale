@@ -24,13 +24,13 @@ const Product = () => {
                 </View>
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                     <View style={{backgroundColor: '#B4C9FF', height: 129, width: 163}}>
-                    <Text style={{color: '#000', fontSize: 20}}>Quantity</Text>
-                    <Text style={{color: '#000', fontSize: 96}}>15</Text>
+                    <Text style={{color: '#000', fontSize: 20, alignSelf: 'center'}}>Quantity</Text>
+                    <Text style={{color: '#000', fontSize: 76, alignSelf: 'center'}}>15</Text>
                     </View>
 
                     <View style={{backgroundColor: '#E6DBFF', height: 129, width: 158}}>
-                    <Text style={{color: '#000', fontSize: 20}}>Price</Text>
-                    <Text style={{color: '#000', fontSize: 48}}>2.5</Text>
+                    <Text style={{color: '#000', fontSize: 20, alignSelf: 'center'}}>Price</Text>
+                    <Text style={{color: '#000', fontSize: 48, alignSelf: 'center'}}>2.5</Text>
                     </View>
                 </View>
             </View>
