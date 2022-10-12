@@ -73,7 +73,7 @@ const AddProduct = () => {
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.button}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>Capture Product</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Product</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
         height: 45,
         width: 100,
         backgroundColor: '#96DED1',
-        color: '#000',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
@@ -137,7 +136,6 @@ const styles = StyleSheet.create({
       height: 45,
       width: 80,
       backgroundColor: '#CAC9C9',
-      color: '#fff',
       alignItems: 'center',
       textAlign: 'center',
       justifyContent: 'center',

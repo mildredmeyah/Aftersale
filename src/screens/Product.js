@@ -10,27 +10,27 @@ const Product = () => {
         <View style={styles.container}>
 
             <View>
-                <View style={{backgroundColor: '#A09999', height: 72, width: 321}}>
-                    <Text style={{color: '#fff', fontSize: 32, marginLeft: 10}}>Banana Large</Text>
+                <View style={{backgroundColor: '#A09999', height: 42, width: 321}}>
+                    <Text style={{color: '#fff', fontSize: 24, marginLeft: 10}}>Banana Large</Text>
                 </View>
 
                 <View style={{backgroundColor: '#D6F8FF', height: 181, width: 321}}>
-                    <Text style={{color: '#000', fontSize: 20}}>A box of large bananas</Text>
-                    <Text style={{color: '#000', fontSize: 20}}>100 units</Text>
+                    <Text style={{color: '#191919', fontSize: 12}}>A box of large bananas</Text>
+                    <Text style={{color: '#191919', fontSize: 12}}>100 units</Text>
                 </View>
 
                 <View style={{backgroundColor: '#9FD1FF', height: 44, width: 321}}>
-                    <Text style={{color: '#000', fontSize: 20}}>Cost: 120</Text>
+                    <Text style={{color: '#191919', fontSize: 14}}>Cost: 120</Text>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                     <View style={{backgroundColor: '#B4C9FF', height: 129, width: 163}}>
-                    <Text style={{color: '#000', fontSize: 20, alignSelf: 'center'}}>Quantity</Text>
-                    <Text style={{color: '#000', fontSize: 76, alignSelf: 'center'}}>15</Text>
+                    <Text style={{color: '#191919', fontSize: 14, alignSelf: 'center'}}>Quantity</Text>
+                    <Text style={{color: '#191919', fontSize: 76, alignSelf: 'center'}}>15</Text>
                     </View>
 
                     <View style={{backgroundColor: '#E6DBFF', height: 129, width: 158}}>
-                    <Text style={{color: '#000', fontSize: 20, alignSelf: 'center'}}>Price</Text>
-                    <Text style={{color: '#000', fontSize: 48, alignSelf: 'center'}}>2.5</Text>
+                    <Text style={{color: '#191919', fontSize: 14, alignSelf: 'center'}}>Price</Text>
+                    <Text style={{color: '#191919', fontSize: 48, alignSelf: 'center'}}>2.5</Text>
                     </View>
                 </View>
             </View>
@@ -40,13 +40,13 @@ const Product = () => {
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonEdit}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>Edit</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Edit</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonStock}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>Capture Stock</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Stock</Text>
             </TouchableOpacity>
             </View> 
 
@@ -54,7 +54,7 @@ const Product = () => {
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonSale}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>Capture Sale</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Sale</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -68,7 +68,7 @@ const Product = () => {
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonQuality}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>Update Quality</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Update Quality</Text>
             </TouchableOpacity>
             </View>
             </View>        
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
         height: 35,
         width: 100,
         backgroundColor: '#96DED1',
-        color: '#000',
         alignItems: 'center',
         alignSelf: 'left',
         textAlign: 'center',
@@ -125,7 +124,6 @@ const styles = StyleSheet.create({
         height: 45,
         width: 100,
         backgroundColor: '#96DED1',
-        color: '#000',
         alignItems: 'center',
         textAlign: 'center',
         justifyContent: 'center',
@@ -138,7 +136,6 @@ const styles = StyleSheet.create({
         height: 45,
         width: 90,
         backgroundColor: '#96DED1',
-        color: '#000',
         alignItems: 'center',
         alignSelf: 'left',
         textAlign: 'center',
@@ -152,7 +149,6 @@ const styles = StyleSheet.create({
       height: 40,
       width: 100,
       backgroundColor: '#CAC9C9',
-      color: '#fff',
       alignItems: 'center',
       textAlign: 'center',
       justifyContent: 'center',
@@ -164,7 +160,6 @@ const styles = StyleSheet.create({
         height: 45,
         width: 100,
         backgroundColor: '#96DED1',
-        color: '#000',
         alignItems: 'center',
         alignSelf: 'left',
         textAlign: 'center',
