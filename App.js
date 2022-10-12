@@ -9,20 +9,48 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
 import AddProduct from './src/screens/AddProduct';
+import Product from './src/screens/Product';
+import Splash from './src/screens/Splash'
+// import Profile from './src/screens/Profile';
+
 
 import { auth } from './src/config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
 
 
 const Stack = createNativeStackNavigator();
+
 
 export default function App() {
   //function to register new user with email and password
   //function to login user with email and password
   //function to log out the user
+  
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+    <NavigationContainer >
+      <Stack.Navigator  screenOptions={{
+        headerStyle:{
+          backgroundColor:'#96DED1'
+        }
+      
+      }}  >
+        <Stack.Screen name='dd' options={{title:'' }}>
+          {(props) => <Splash {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='Login' options={{title:'Login'}}>
+          {(props) => <Login {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='Register' options={{title:'Register'}}>
+          {(props) => <Register {...props} />}
+        </Stack.Screen> 
+
+        <Stack.Screen name='Home' options={{title:'Home'}}>
+          {(props) => <Dashboard {...props} />}
+        </Stack.Screen> 
+
         <Stack.Screen name='AddProduct' 
         options={{title:'Add Product',
                headerTitleStyle: {color: '#111', fontWeight: 'bold',},
@@ -40,17 +68,30 @@ export default function App() {
           {(props) => <AddProduct {...props} />}
         </Stack.Screen>
 
-        <Stack.Screen name='Login' options={{title:'Login'}}>
-          {(props) => <Login {...props} />}
+        <Stack.Screen name='Product' 
+        options={{title:'View Product',
+               headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+               headerStyle: {backgroundColor: '#96DED1',},
+               
+               headerRight: () => (
+                
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                  <SearchIcon size="large" />
+
+                  <AccountCircleIcon size="large" />
+                </View>
+              ),
+               }}>
+          {(props) => <Product {...props} />}
         </Stack.Screen>
 
-        <Stack.Screen name='Register' options={{title:'Register'}}>
-          {(props) => <Register {...props} />}
-        </Stack.Screen>
+        {/* <Stack.Screen name='Profile' options={{title:'Profile'}}>
+          {(props) => <Profile {...props} />}
+        </Stack.Screen>  */}
 
-        <Stack.Screen name='Home' options={{title:'Home'}}>
-          {(props) => <Dashboard {...props} />}
-        </Stack.Screen>
+       
+
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -62,5 +103,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    maxHeight:840,
+    maxWidth:1000,
+    height:896,
+    width:424,
   },
 });

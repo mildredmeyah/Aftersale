@@ -69,21 +69,21 @@ const AddProduct = () => {
                 autoCorrect={false}
                 secureTextEntry={true} />
             </View>
-            <View style={{marginBottom: 10, marginTop: 10}}>
+            <View style={{flex: 1, flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.button}>
                 <Text style={{fontWeight: 'bold', fontSize: 16}}>Capture Product</Text>
             </TouchableOpacity>
-            </View>
-            <View>
+
             <TouchableOpacity
                 onPress={() => { navigation.navigate('Home')}}
                 style={styles.buttonClear}>
                 <Text style={{fontWeight: 'bold', fontSize: 16, color: '#fff'}}>Clear Inputs</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> 
             </View>
-                     
+            
+                          
             
         </View>
     )
@@ -120,23 +120,26 @@ const styles = StyleSheet.create({
         borderRadius: 4,
     },
     button: {
-        marginTop: 10,
-        height: 35,
-        width: 150,
+        marginTop: 5,
+        height: 45,
+        width: 100,
         backgroundColor: '#96DED1',
         color: '#000',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
         fontWeight: 'bold',
         borderRadius: 10, 
     },
     buttonClear: {
-      marginTop: 15,
-      height: 35,
-      width: 120,
+      marginTop: 5,
+      marginLeft: 10,
+      height: 45,
+      width: 80,
       backgroundColor: '#CAC9C9',
       color: '#fff',
       alignItems: 'center',
+      textAlign: 'center',
       justifyContent: 'center',
       fontWeight: 'bold', 
       borderRadius: 10,
