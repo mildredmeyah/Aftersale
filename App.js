@@ -9,7 +9,7 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
 import AddProduct from './src/screens/AddProduct';
-import Product from './src/screens/Product';
+import ViewProduct from './src/screens/ViewProduct';
 import Splash from './src/screens/Splash'
 // import Profile from './src/screens/Profile';
 
@@ -68,7 +68,7 @@ export default function App() {
           {(props) => <AddProduct {...props} />}
         </Stack.Screen>
 
-        <Stack.Screen name='Product' 
+        <Stack.Screen name='ViewProduct' 
         options={{title:'View Product',
                headerTitleStyle: {color: '#111', fontWeight: 'bold',},
                headerStyle: {backgroundColor: '#96DED1',},
@@ -82,7 +82,7 @@ export default function App() {
                 </View>
               ),
                }}>
-          {(props) => <Product {...props} />}
+          {(props) => <ViewProduct {...props} />}
         </Stack.Screen>
 
         {/* <Stack.Screen name='Profile' options={{title:'Profile'}}>

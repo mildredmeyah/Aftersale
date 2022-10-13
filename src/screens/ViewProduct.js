@@ -2,7 +2,7 @@ import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, SafeAreaVi
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const Product = () => {
+const ViewProduct = () => {
     const navigation = useNavigation()
 
     return (
@@ -78,7 +78,7 @@ const Product = () => {
     )
 }
 
-export default Product
+export default ViewProduct
 
 const styles = StyleSheet.create({
     container: {
