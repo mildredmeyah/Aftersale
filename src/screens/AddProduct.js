@@ -50,15 +50,15 @@ const AddProduct = () => {
                 autoCapitalize= "none"
                 autoCorrect={false} />
                 <TextInput style={styles.TextInput}
-                placeholder= "Selling price"
-                value={sellingPrice}
-                onChangeText={(Text) => setSellingPrice(Text)}
-                autoCapitalize= "none"
-                autoCorrect={false} />
-                <TextInput style={styles.TextInput}
                 placeholder= "Cost (single)"
                 value={costSingle}
                 onChangeText={(Text) => setCostSingle(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
+                <TextInput style={styles.TextInput}
+                placeholder= "Selling price"
+                value={sellingPrice}
+                onChangeText={(Text) => setSellingPrice(Text)}
                 autoCapitalize= "none"
                 autoCorrect={false} />
                 <TextInput style={styles.TextInput}

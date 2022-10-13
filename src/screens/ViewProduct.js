@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,6 +10,7 @@ const ViewProduct = () => {
         <View style={styles.container}>
 
             <View>
+
                 <View style={{backgroundColor: '#A09999', height: 42, width: 321}}>
                     <Text style={{color: '#fff', fontSize: 24, marginLeft: 10}}>Banana Large</Text>
                 </View>
@@ -19,8 +20,13 @@ const ViewProduct = () => {
                     <Text style={{color: '#191919', fontSize: 12}}>100 units</Text>
                 </View>
 
-                <View style={{backgroundColor: '#9FD1FF', height: 44, width: 321}}>
-                    <Text style={{color: '#191919', fontSize: 14}}>Cost: 120</Text>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#9FD1FF', height: 44, width: 321}}>
+                    <View>
+                    <Text style={{color: '#191919', fontSize: 12, marginRight: 70}}>Cost/Single: 20</Text>
+                    </View>
+                    <View>
+                    <Text style={{color: '#191919', fontSize: 12, marginLeft: 70}}>Cost/Bulk: 120</Text>
+                    </View>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                     <View style={{backgroundColor: '#B4C9FF', height: 129, width: 163}}>
@@ -98,7 +104,6 @@ const styles = StyleSheet.create({
         width: 100,
         backgroundColor: '#96DED1',
         alignItems: 'center',
-        alignSelf: 'left',
         textAlign: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
@@ -122,7 +127,6 @@ const styles = StyleSheet.create({
         width: 90,
         backgroundColor: '#96DED1',
         alignItems: 'center',
-        alignSelf: 'left',
         textAlign: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
@@ -146,7 +150,6 @@ const styles = StyleSheet.create({
         width: 100,
         backgroundColor: '#96DED1',
         alignItems: 'center',
-        alignSelf: 'left',
         textAlign: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
