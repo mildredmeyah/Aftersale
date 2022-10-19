@@ -44,30 +44,25 @@ const AddProduct = () => {
                 autoCapitalize= "none"
                 autoCorrect={false} />
                 <TextInput style={styles.TextInput}
-                placeholder= "Enter cost per bulk"
-                value={costPerBulk}
-                onChangeText={(Text) => setCostPerBulk(Text)}
-                autoCapitalize= "none"
-                autoCorrect={false} />
-                <TextInput style={styles.TextInput}
-                placeholder= "Cost (single)"
-                value={costSingle}
-                onChangeText={(Text) => setCostSingle(Text)}
-                autoCapitalize= "none"
-                autoCorrect={false} />
-                <TextInput style={styles.TextInput}
-                placeholder= "Selling price"
-                value={sellingPrice}
-                onChangeText={(Text) => setSellingPrice(Text)}
-                autoCapitalize= "none"
-                autoCorrect={false} />
-                <TextInput style={styles.TextInput}
                 placeholder= "Quantity"
                 value={quantity}
                 onChangeText={(Text) => setQuantity(Text)}
                 autoCapitalize= "none"
                 autoCorrect={false}
                 secureTextEntry={true} />
+                <TextInput style={styles.TextInput}
+                placeholder= "Enter cost per bulk"
+                value={costPerBulk}
+                onChangeText={(Text) => setCostPerBulk(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
+                <Text style={{marginLeft: 14}}>Enter % you want to earn</Text>
+                <TextInput style={styles.TextInput}
+                placeholder= "Percentage"
+                value={costSingle}
+                onChangeText={(Text) => setCostSingle(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
             </View>
             <View style={{flex: 1, flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
             <TouchableOpacity
