@@ -90,6 +90,7 @@ const Register = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         padding: 15,
+        backgroundColor: '#fff',
     },
     badErr: {
         backgroundColor: '#ff0000',
