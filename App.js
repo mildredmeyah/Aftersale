@@ -32,8 +32,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login' options={{headerShown:false}}>
-        <Stack.Screen name='Login'    >
+        <Stack.Screen name='results'    >
           {(props) => <Result {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='Login'    >
+          {(props) => <Login {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='AddProduct'    >
+          {(props) => <AddProduct {...props} />}
         </Stack.Screen>
 
         <Stack.Screen name='Register' options={{headerShown:false}}>

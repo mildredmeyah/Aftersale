@@ -5,7 +5,8 @@ import Header from '../components/Header';
 //import AddProduct from './addProduct';
 
 import { auth } from '../config/firebase';
-import { signOut } from 'firebase/auth';;
+import { signOut } from 'firebase/auth';import ViewAll from '../components/view';
+;
 
 const Dashboard = ({navigation}) => {
 //states for user email
@@ -47,6 +48,13 @@ const logout = async() => {
         <Button title='Result' onPress={() => navigation.navigate("Result")} />
         <Button title='Logout' onPress={logout} />
         <Text>Welcome to the app!</Text>
+        <View>
+          <View style={{marginBottom: 20, marginTop: 20}}>
+           <Text>View your products</Text>
+          </View>
+          
+          <ViewAll />
+        </View>
     </View>
   )
 }

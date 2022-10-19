@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
-import { auth } from '../config/firebase';
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import { auth, db, collection } from '../config/firebase';
 
 // create a component
 const AddProduct = () => {
@@ -55,6 +55,9 @@ const AddProduct = () => {
                 <Text>Cost Price   : <TextInput style={{borderWidth: '2px'}} onChangeText={(value) =>setCostPrice(value)} /></Text>
                 <Text>Quantity     : <TextInput style={{borderWidth: '2px'}} onChangeText={(value) =>setQuantity(value)} /></Text>
                 <Text>Selling Price: <TextInput style={{borderWidth: '2px'}} onChangeText={(value) =>setSellingPrice(value)} /></Text>
+            </View>
+            <View>
+                <Button title='Add Product' onPress={addProduct} />
             </View>
         </View>
     );
