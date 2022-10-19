@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import Header from '../components/Header';
 
 import { auth } from '../config/firebase';
-import { signOut } from 'firebase/auth';;
+import { signOut } from 'firebase/auth';
+import {Result} from '../screens/Result';
 
 const Dashboard = ({navigation}) => {
 //states for user email
@@ -23,12 +24,14 @@ const logout = async() => {
       navigation.navigate('Login');
     }
   )
+  
 }
  
   return (
     <View style={styles.container}>
         <Header title='Home' />
         <Text>{email}</Text>
+        <Button title='Result' onPress={() => navigation.navigate("Result")} />
         <Button title='Logout' onPress={logout} />
         <Text>Welcome to the app!</Text>
     </View>

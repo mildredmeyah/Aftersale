@@ -22,17 +22,21 @@ export default function App() {
   //function to log out the user
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='Login' options={{headerShown:false}}>
         <Stack.Screen name='Login'    >
-          {(props) => <Login {...props} />}
+          {(props) => <Result {...props} />}
         </Stack.Screen>
 
         <Stack.Screen name='Register' options={{headerShown:false}}>
           {(props) => <Register {...props} />}
         </Stack.Screen>
 
-        <Stack.Screen name='Home' options={{title:'Home'}}>
+        <Stack.Screen name='Home' options={{headerShown:false}}>
           {(props) => <Dashboard {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='Result' options={{title:'Result'}}>
+          {(props) => <Result {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
   </NavigationContainer>

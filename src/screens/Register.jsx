@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#96DED1',
         alignItems: 'center',
         justifyContent: 'center',
+        
     },
     
     lgn:{

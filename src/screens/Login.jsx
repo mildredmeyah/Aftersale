@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
         
         
         
+        
     },
     badErr: {
         backgroundColor: '#ff0000',
