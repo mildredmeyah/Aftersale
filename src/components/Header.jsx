@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native'
 const Header = ({title}) => {
   return (
     <View style={styles.container}>
-        <Text  >{title}</Text>
-        <Text>Manage your business with better information</Text>
+        <Text   style={styles.hed}>{title}</Text>
+        
     </View>
   )
 }
@@ -22,6 +22,21 @@ const styles = StyleSheet.create({
 
         alignItems: 'center', 
         justifyContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        
+    },
+    hed:{
+      flex:1,
+      marginTop: 10,
+      fontSize:25,
+      fontWeight: "bold"
+    },
+    bdy:{
+      fontSize:15,
+      marginTop: 10,
+      fontWeight: "bold"
+
     },
    
    

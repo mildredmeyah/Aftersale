@@ -43,6 +43,9 @@ const logout = async() => {
             </TouchableOpacity>
 
         <Button title='Logout' onPress={logout} color='#96DED1'/>
+        <Text>{email}</Text>
+        <Button title='Result' onPress={() => navigation.navigate("Result")} />
+        <Button title='Logout' onPress={logout} />
         <Text>Welcome to the app!</Text>
     </View>
   )
