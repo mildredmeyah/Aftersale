@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 import Header from '../components/Header';
+//import AddProduct from './addProduct';
 
 import { auth } from '../config/firebase';
-import { signOut } from 'firebase/auth';
-import {Result} from '../screens/Result';
+import { signOut } from 'firebase/auth';;
 
 const Dashboard = ({navigation}) => {
 //states for user email
@@ -24,12 +25,24 @@ const logout = async() => {
       navigation.navigate('Login');
     }
   )
-  
 }
  
   return (
     <View style={styles.container}>
         <Header title='Home' />
+        <Text>{email}</Text>
+
+        <TouchableOpacity
+                onPress={() => { navigation.navigate('AddProduct')}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#96DED1'}}>Go to AddProduct page</Text>
+            </TouchableOpacity>
+
+        <TouchableOpacity
+                onPress={() => { navigation.navigate('ViewProduct')}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#96DED1'}}>Go to ViewProduct page</Text>
+            </TouchableOpacity>
+
+        <Button title='Logout' onPress={logout} color='#96DED1'/>
         <Text>{email}</Text>
         <Button title='Result' onPress={() => navigation.navigate("Result")} />
         <Button title='Logout' onPress={logout} />
@@ -45,4 +58,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Dashboard
+export default Dashboard;
