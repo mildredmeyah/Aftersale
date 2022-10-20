@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Button,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Button,TouchableOpacity,  SafeAreaView } from 'react-native';
 import {BarChart} from "react-native-chart-kit";
 
 
 export default function Result() {
   return (
-    <View style={{backgroundColor:"white"}}>
-                <View style={styles.container}>
+    <SafeAreaView style={{backgroundColor:"#fff"}}>
+        <View style={styles.container}>
+         
 
 
                     <View >
@@ -14,18 +15,24 @@ export default function Result() {
                         entered for sale</Text>
                     </View>
 
+                    
                     <View >
-                    <Text style={styles.space}></Text>
+                    <Text style={styles.spa}></Text>
+                    </View>
+                    <View style={styles.pl}>
+
+                    <View style={{backgroundColor: '#B4C9FF', height: 129, width: 203}}>
+                    <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Profit</Text>
+                    <Text style={{color: '#191919', fontSize: 76, alignSelf: 'center'}}>0</Text>
                     </View>
 
-                    <View style={styles.pl} >
-                    <Text style={styles.p}>Profit</Text>
-
-                    <Text style={styles.l}>Loss</Text>
+                    <View style={{backgroundColor: '#E6DBFF', height: 129, width: 205}}>
+                    <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Loss</Text>
+                    <Text style={{color: '#191919', fontSize: 76, alignSelf: 'center'}}>0</Text>
+                    </View>
                     </View>
 
                     <View style={styles.Graph}>
-                    <Text>Profit$Loss Graph</Text>
                     <View style={styles.bar}>
                     <BarChart
                     
@@ -76,33 +83,33 @@ export default function Result() {
                      
                        <View style={styles.jtg}>     
                       <TouchableOpacity style={styles.Daily} >
-                      <Text>Daily</Text>
+                      <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Daily</Text>
                       </TouchableOpacity>
                       
                       
                       <TouchableOpacity style={styles.week} >
-                      <Text>Weekly</Text>
+                      <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Weekly</Text>
                       </TouchableOpacity>
                    
                       </View>
                       <View style={styles.tfgy}>
                     
                       <TouchableOpacity style={styles.monthly}>
-                      <Text>Monthly</Text>
+                      <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Monthly</Text>
                       </TouchableOpacity>
       
                       
                       <TouchableOpacity style={styles.annually} >
-                      <Text>Anually</Text>
+                      <Text style={{color: '#191919', fontSize: 30, alignSelf: 'center', fontFamily:'bold',}}>Anually</Text>
                       </TouchableOpacity>
 
                       </View>
                  
                     </View>
                   
-
-            </View>
-   </View>
+        
+      </View>
+   </SafeAreaView>
   );
 }
 
@@ -111,6 +118,10 @@ const styles = StyleSheet.create({
     
     backgroundColor: '#fff',
     paddingTop: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+
   
   },
   hed:{
@@ -122,8 +133,14 @@ const styles = StyleSheet.create({
   para:{
     marginTop: 20,
     backgroundColor: '#D6F8FF',
-    height: 99,
+    height: 70,
     width:409,
+    marginLeft:12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 30,
+     alignSelf: 'center',
+      fontFamily:'bold'
   },
  
   Graph:{
@@ -135,31 +152,37 @@ const styles = StyleSheet.create({
     marginTop: 20,
     
   },
-  space:{
-    backgroundColor: '#D6F8FF',
+  spa:{
+    backgroundColor: '#9FD1FF',
     width: 409,
-    height: 45,
+    height: 30,
+    marginLeft:12,
   },
   p:{
 
     width:205,
-    height: 129,
+    height: 100,
     backgroundColor:'#B4C9FF',
     alignSelf:'center',
     fontSize:25,
-    fontFamily:'bold',
+    
+
 
   },
   l:{
     width: 204,
-    height: 129,
+    height: 100,
     backgroundColor:'#E6DBFF',
     fontSize:25,
+    fontFamily:'bold',
+    backgroundColor:'#E6DBFF',
     fontFamily:'bold',
 
   },
   pl:{
     flexDirection:"row",
+    marginLeft:10,
+    
     
   },
   monthly:{

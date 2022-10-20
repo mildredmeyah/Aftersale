@@ -8,6 +8,7 @@ const ViewProduct = () => {
     return (
         <SafeAreaView style={{backgroundColor: '#fff'}}>
         <View style={styles.container}>
+            
 
             <View>
 
