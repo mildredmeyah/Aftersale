@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Dashboard from './src/screens/Dashboard';
-import AddProduct from './src/screens/AddProduct';
+import AddProduct from './src/screens/addProduct';
 import ViewProduct from './src/screens/ViewProduct';
 import Splash from './src/screens/Splash'
 // import Profile from './src/screens/Profile';
@@ -20,9 +20,7 @@ import { auth } from './src/config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 
-
 const Stack = createNativeStackNavigator();
-
 
 export default function App() {
   //function to register new user with email and password
@@ -50,6 +48,23 @@ export default function App() {
 
         <Stack.Screen name='Home' options={{headerShown:false}}>
           {(props) => <Dashboard {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='AddProduct' 
+        options={{title:'Add Product',
+               headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+               headerStyle: {backgroundColor: '#96DED1',},
+               
+               headerRight: () => (
+                
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                  <SearchIcon size="large" />
+
+                  <AccountCircleIcon size="large" />
+                </View>
+              ),
+               }}>
+          {(props) => <AddProduct {...props} />}
         </Stack.Screen>
 
         <Stack.Screen name='ViewProduct' 
