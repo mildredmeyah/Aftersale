@@ -1,16 +1,51 @@
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { auth } from '../config/firebase';
 
 const AddProduct = () => {
     const navigation = useNavigation()
+
     const [productName, setProductName] = useState('');
     const [ProductDesc, setProductDesc] = useState('')
-    const [costPerBulk, setCostPerBulk] = useState('')
-
-    const [sellingPrice, setSellingPrice] = useState('');
-    const [costSingle, setCostSingle] = useState('');
     const [quantity, setQuantity] = useState('');
+    const [costPerBulk, setCostPerBulk] = useState();
+    const [Percentage, setPercentage] = useState('');
+    
+    const [product, setProduct] = useState();
+
+    const addProduct = () => {
+        if(productName === '') {
+            //don't allow
+        } else {
+            if(quantity === '') {
+                //don't allow
+            } else {
+                if(costPerBulk === '') {
+                    //don't allow
+                } else {
+                    if(Percentage === '') {
+                        //don't allow
+                    } else {
+                        const collectionRef=collection(db,"Products");
+
+                        const Products={
+                            productName:productName,
+                            costPerBulk:costPerBulk,
+                            quantity:quantity,
+                            Percentage:Percentage,
+                        };
+
+                        addDoc(collectionRef, Products).then(()=>{
+                            alert("Added transaction successfully")
+                        }).catch((err)=>{
+                            console.log(err);
+                        })
+                    }
+                }
+            }
+        }
+    }
 
     return (
         <View style={styles.container}>
@@ -60,7 +95,7 @@ const AddProduct = () => {
                 <TextInput style={styles.TextInput}
                 placeholder= "Percentage"
                 value={costSingle}
-                onChangeText={(Text) => setCostSingle(Text)}
+                onChangeText={(Text) => setPercentage(Text)}
                 autoCapitalize= "none"
                 autoCorrect={false} />
             </View>

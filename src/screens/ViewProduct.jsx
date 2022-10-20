@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 const ViewProduct = () => {
+
     const navigation = useNavigation()
 
     return (
