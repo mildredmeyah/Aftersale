@@ -14,7 +14,8 @@ const AddProduct = () => {
     
     const [product, setProduct] = useState();
 
-    const addProduct = () => {
+    const AddProduct = () => {
+
         if(productName === '') {
             //don't allow
         } else {
