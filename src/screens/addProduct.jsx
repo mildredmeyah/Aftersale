@@ -16,6 +16,8 @@ const AddProduct = () => {
 
     const AddProduct = () => {
 
+        const navigation = useNavigation()
+
         if(productName === '') {
             //don't allow
         } else {
