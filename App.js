@@ -48,7 +48,7 @@ export default function App() {
           {(props) => <Dashboard {...props} />}
         </Stack.Screen>
 
-        {/* <Stack.Screen name='AddProduct' 
+        <Stack.Screen name='AddProduct' 
         options={{title:'Add Product',
                headerTitleStyle: {color: '#111', fontWeight: 'bold',},
                headerStyle: {backgroundColor: '#96DED1',},
@@ -63,7 +63,7 @@ export default function App() {
               ),
                }}>
           {(props) => <AddProduct {...props} />}
-        </Stack.Screen> */}
+        </Stack.Screen>
 
         <Stack.Screen name='ViewProduct' 
         options={{title:'View Product',
@@ -82,27 +82,23 @@ export default function App() {
           {(props) => <ViewProduct {...props} />}
         </Stack.Screen>
 
-        {/* <Stack.Screen name='Profile' options={{title:'Profile'}}>
+        <Stack.Screen name='Profile' options={{title:'Profile'}}>
           {(props) => <Profile {...props} />}
-        </Stack.Screen>  */}
+        </Stack.Screen> 
 
         
 
-        <Stack.Screen name='Result' options={{title:'Result',headerTitleStyle: {color: '#111', fontWeight: 'bold',},
-               headerStyle: {backgroundColor: '#96DED1',},
-       headerRight: () => (
+        <Stack.Screen name='Result' options={{title:'Result'}}></Stack.Screen>
+     
                 
-        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <SearchIcon size="large" />
+        
 
         <Stack.Screen name='Result' options={{title:'Result'}}>
           {(props) => <Result {...props} />}
         </Stack.Screen>
+       
       </Stack.Navigator>
   </NavigationContainer>
-
-
-
   );
 }
 
