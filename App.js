@@ -31,7 +31,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login' options={{headerShown:false}}>
         <Stack.Screen name='results'    >
-          {(props) => <Result {...props} />}
+          {(props) => <Login {...props} />}
         </Stack.Screen>
 
         <Stack.Screen name='Login'    >
@@ -92,7 +92,16 @@ export default function App() {
 
         
 
-        <Stack.Screen name='Result' options={{title:'Result'}}>
+        <Stack.Screen name='Result' options={{title:'Result',headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+               headerStyle: {backgroundColor: '#96DED1',},
+       headerRight: () => (
+                
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+          <SearchIcon size="large" />
+
+          <AccountCircleIcon size="large" />
+        </View>
+      ),}}>
           {(props) => <Result {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
