@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity,SafeAreaView } from 'react-native';
 import Header from '../components/Header';
 
 import { auth } from '../config/firebase';
@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
 
 
   return (
-    <View style={{backgroundColor:''}} >
+    <View style={{backgroundColor:'white'}} >
     <View style={styles.container}>
          <Header title='Login' /> 
         <View>

@@ -58,6 +58,8 @@ const Register = ({navigation}) => {
     }
   return (
     
+
+    <View style={{backgroundColor:"white"}}>
     
     <View style={styles.container}>
         <View style={styles.content}>
@@ -95,7 +97,7 @@ const Register = ({navigation}) => {
         </View>
         
     </View>
-    
+    </View>
   )
 }
 
