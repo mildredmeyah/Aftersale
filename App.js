@@ -11,7 +11,7 @@ import Dashboard from './src/screens/Dashboard';
 import AddProduct from './src/screens/addProduct';
 import ViewProduct from './src/screens/ViewProduct';
 import Splash from './src/screens/Splash'
-// import Profile from './src/screens/Profile';
+import ProfileScreen from './src/screens/Profile'
 
 import Result from './src/screens/Result';
 
@@ -23,19 +23,25 @@ import { useState } from 'react';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  //function to register new user with email and password
+  //function to register new user with email and password 
+  // git config --global user.email "you@example.com"
+  // git config --global user.name "Your Name"
   //function to login user with email and password
   //function to log out the user
   
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'  >
-        <Stack.Screen name='Login'   options={{headerShown:false}} >
-          {(props) => <Login {...props} />}
+      <Stack.Navigator initialRouteName='Splash' options={{headerShown:false}}>
+        <Stack.Screen name='Splash'    >
+          {(props) => <Splash {...props} />}
         </Stack.Screen>
 
         <Stack.Screen name='Register' options={{headerShown:false}}>
           {(props) => <Register {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name='Login' options={{headerShown:false}}>
+          {(props) => <Login {...props} />}
         </Stack.Screen> 
 
         <Stack.Screen name='Home' options={{headerShown:false}}>
@@ -76,31 +82,23 @@ export default function App() {
           {(props) => <ViewProduct {...props} />}
         </Stack.Screen>
 
-        {/* <Stack.Screen name='Profile' options={{title:'Profile'}}>
+        <Stack.Screen name='Profile' options={{title:'Profile'}}>
           {(props) => <Profile {...props} />}
-        </Stack.Screen>  */}
-
-       
+        </Stack.Screen> 
 
         
 
-        <Stack.Screen name='Result' options={{title:'Result',headerTitleStyle: {color: '#111', fontWeight: 'bold',},
-               headerStyle: {backgroundColor: '#96DED1',},
-       headerRight: () => (
+        <Stack.Screen name='Result' options={{title:'Result'}}></Stack.Screen>
+     
                 
-        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <SearchIcon size="large" />
+        
 
-          <AccountCircleIcon size="large" />
-        </View>
-      ),}}>
+        <Stack.Screen name='Result' options={{title:'Result'}}>
           {(props) => <Result {...props} />}
         </Stack.Screen>
+       
       </Stack.Navigator>
   </NavigationContainer>
-
-
-
   );
 }
 

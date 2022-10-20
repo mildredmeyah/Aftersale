@@ -1,10 +1,30 @@
-import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, Alert } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import RoundBtn from "../components/antButton";
 
 const ViewProduct = () => {
 
     const navigation = useNavigation()
+
+    const DeleteAlert = () => {
+        Alert.alert(
+            'Are You Sure!',
+            'This option will delete your product permanantly',
+            [
+            {
+                text: 'Delete',
+                onPress: () => console.log('Delete it')
+            },
+            {
+                text: 'Cancel',
+                onPress: () => console.log('Dont Delete')
+            },
+            ],
+            {
+                cancelable: true,
+            });
+    }
 
     return (
         <SafeAreaView style={{backgroundColor: '#fff'}}>
@@ -50,12 +70,12 @@ const ViewProduct = () => {
                 style={styles.buttonEdit}>
                 <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Edit Product</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
+            <RoundBtn antIconName='delete' style={{backgroundColor: 'red', marginBottom: 15}} onPress={DeleteAlert} />
+            {/* <TouchableOpacity
+                onPress={DeleteAlert}
                 style={styles.buttonDelete}>
                 <Text style={{fontWeight: 'bold', fontSize: 16, color: '#fff'}}>Delete</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             </View> 
 
             </View>        
