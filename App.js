@@ -50,7 +50,7 @@ export default function App() {
           {(props) => <Dashboard {...props} />}
         </Stack.Screen>
 
-        <Stack.Screen name='AddProduct' 
+        {/* <Stack.Screen name='AddProduct' 
         options={{title:'Add Product',
                headerTitleStyle: {color: '#111', fontWeight: 'bold',},
                headerStyle: {backgroundColor: '#96DED1',},
@@ -65,7 +65,7 @@ export default function App() {
               ),
                }}>
           {(props) => <AddProduct {...props} />}
-        </Stack.Screen>
+        </Stack.Screen> */}
 
         <Stack.Screen name='ViewProduct' 
         options={{title:'View Product',
