@@ -1,3 +1,8 @@
+import React, {useEffect, useState} from 'react';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import Header from '../components/Header';
+//import AddProduct from './addProduct';
 
 // import React from 'react';
 // import{ StyleSheet,

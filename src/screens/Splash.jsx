@@ -5,6 +5,9 @@ import Header from '../components/Header';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
+
+
+
 const Splash = ({navigation}) => {
 
 
