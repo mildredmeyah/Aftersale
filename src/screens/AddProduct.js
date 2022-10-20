@@ -1,16 +1,61 @@
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { auth, db } from '../config/firebase';
+import { addDoc, collection } from "firebase/firestore";
+import { ClearAll } from "@mui/icons-material";
 
 const AddProduct = () => {
     const navigation = useNavigation()
-    const [productName, setProductName] = useState('');
+    const [name, setProductName] = useState('');
     const [ProductDesc, setProductDesc] = useState('')
     const [costPerBulk, setCostPerBulk] = useState('')
+    const [email] = useState(auth.currentUser.email);
 
     const [sellingPrice, setSellingPrice] = useState('');
     const [costSingle, setCostSingle] = useState('');
     const [quantity, setQuantity] = useState('');
+
+
+    const addProduct = () => {
+        if(name === '') {
+            alert("Please insert a product name");
+            //don't allow
+        } else {
+            if(costPerBulk === '' || costPerBulk < 1) {
+                alert("Please insert a Selling price of more than 1");
+                //don't allow
+            } else {
+                if(quantity === '' || quantity < 1) {
+                    alert("Please insert a quantity of 1 or more");
+                    //don't allow
+                } else {
+                    if(sellingPrice === '' || sellingPrice < 1) {
+                        alert("Please insert a Selling price of more than 1");
+                        //don't allow
+                    } else {
+                        const collectionRef=collection(db,"productss");
+
+                        const Products={
+                            name:name,
+                            costPerBulk:costPerBulk,
+                            quantity:quantity,
+                            sellingPrice:sellingPrice,
+                            email: email,
+                        };
+
+                        addDoc(collectionRef, Products).then(()=>{
+                            alert("Added transaction successfully");
+                            ClearAll();
+                            navigation.navigate('Home')
+                        }).catch((err)=>{
+                            console.log(err);
+                        })
+                    }
+                }
+            }
+        }
+    }
 
     return (
         <View style={styles.container}>
@@ -18,7 +63,7 @@ const AddProduct = () => {
             <View>
                 <TextInput style={styles.TextInput}
                 placeholder= "Enter product name"
-                value={productName}
+                value={name}
                 onChangeText={(Text) => setProductName(Text)}
                 autoCapitalize= "none"
                 autoCorrect={false} />
@@ -44,29 +89,41 @@ const AddProduct = () => {
                 autoCapitalize= "none"
                 autoCorrect={false} />
                 <TextInput style={styles.TextInput}
+                placeholder= "Enter cost per bulk"
+                value={costPerBulk}
+                onChangeText={(Text) => setCostPerBulk(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
+                <TextInput style={styles.TextInput}
+                placeholder= "Cost (single)"
+                value={costSingle}
+                onChangeText={(Text) => setCostSingle(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
+                <TextInput style={styles.TextInput}
+                placeholder= "Selling price"
+                value={sellingPrice}
+                onChangeText={(Text) => setSellingPrice(Text)}
+                autoCapitalize= "none"
+                autoCorrect={false} />
+                <TextInput style={styles.TextInput}
                 placeholder= "Quantity"
                 value={quantity}
                 onChangeText={(Text) => setQuantity(Text)}
                 autoCapitalize= "none"
                 autoCorrect={false}
                 secureTextEntry={true} />
-                <TextInput style={styles.TextInput}
-                placeholder= "Enter cost per bulk"
-                value={costPerBulk}
-                onChangeText={(Text) => setCostPerBulk(Text)}
+                {/* <TextInput style={styles.TextInput}
+                placeholder= "Email"
+                value={quantity}
+                onChangeText={(Text) => setEmail(Text)}
                 autoCapitalize= "none"
-                autoCorrect={false} />
-                <Text style={{marginLeft: 14}}>Enter % you want to earn</Text>
-                <TextInput style={styles.TextInput}
-                placeholder= "Percentage"
-                value={costSingle}
-                onChangeText={(Text) => setCostSingle(Text)}
-                autoCapitalize= "none"
-                autoCorrect={false} />
+                autoCorrect={false}
+                secureTextEntry={true} /> */}
             </View>
             <View style={{flex: 1, flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
             <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
+                onPress={addProduct}
                 style={styles.button}>
                 <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Product</Text>
             </TouchableOpacity>

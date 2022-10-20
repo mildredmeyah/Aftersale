@@ -1,13 +1,35 @@
-import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, Alert } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import RoundBtn from "../components/antButton";
 
 const ViewProduct = () => {
+
     const navigation = useNavigation()
+
+    const DeleteAlert = () => {
+        Alert.alert(
+            'Are You Sure!',
+            'This option will delete your product permanantly',
+            [
+            {
+                text: 'Delete',
+                onPress: () => console.log('Delete it')
+            },
+            {
+                text: 'Cancel',
+                onPress: () => console.log('Dont Delete')
+            },
+            ],
+            {
+                cancelable: true,
+            });
+    }
 
     return (
         <SafeAreaView style={{backgroundColor: '#fff'}}>
         <View style={styles.container}>
+            
 
             <View>
 
@@ -44,39 +66,18 @@ const ViewProduct = () => {
             <View style={{flex: 1,height: 72, width: 321}}>
             <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
+                onPress={() => { navigation.navigate('AddProduct')}}
                 style={styles.buttonEdit}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Edit</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Edit Product</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
-                style={styles.buttonStock}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Stock</Text>
-            </TouchableOpacity>
-            </View> 
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
-                style={styles.buttonSale}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Capture Sale</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
+            <RoundBtn antIconName='delete' style={{backgroundColor: 'red', marginBottom: 15}} onPress={DeleteAlert} />
+            {/* <TouchableOpacity
+                onPress={DeleteAlert}
                 style={styles.buttonDelete}>
                 <Text style={{fontWeight: 'bold', fontSize: 16, color: '#fff'}}>Delete</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             </View> 
 
-            <View>
-            <TouchableOpacity
-                onPress={() => { navigation.navigate('Home')}}
-                style={styles.buttonQuality}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4F4F4F'}}>Update Quantity</Text>
-            </TouchableOpacity>
-            </View>
             </View>        
             
         </View>
@@ -100,17 +101,6 @@ const styles = StyleSheet.create({
     },
     buttonEdit: {
         marginTop: 15,
-        height: 35,
-        width: 100,
-        backgroundColor: '#96DED1',
-        alignItems: 'center',
-        textAlign: 'center',
-        justifyContent: 'center',
-        fontWeight: 'bold',
-        borderRadius: 10, 
-    },
-    buttonStock: {
-        marginTop: 15,
         height: 45,
         width: 100,
         backgroundColor: '#96DED1',
@@ -118,17 +108,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
         marginLeft: 30,
-        fontWeight: 'bold',
-        borderRadius: 10, 
-    },
-    buttonSale: {
-        marginTop: 15,
-        height: 45,
-        width: 90,
-        backgroundColor: '#96DED1',
-        alignItems: 'center',
-        textAlign: 'center',
-        justifyContent: 'center',
         fontWeight: 'bold',
         borderRadius: 10, 
     },
@@ -143,16 +122,5 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       fontWeight: 'bold', 
       borderRadius: 10,
-    },
-    buttonQuality: {
-        marginTop: 15,
-        height: 45,
-        width: 100,
-        backgroundColor: '#96DED1',
-        alignItems: 'center',
-        textAlign: 'center',
-        justifyContent: 'center',
-        fontWeight: 'bold',
-        borderRadius: 10, 
     },
 })
