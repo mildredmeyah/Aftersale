@@ -34,8 +34,8 @@ const Splash = ({navigation}) => {
             <View style={styles.lgn}>
             <TouchableOpacity style={styles.login} color='#96DED1' onPress={() => navigation.navigate('Login')} >
                 <Text style={{color:'black'}}>LOGIN</Text>
-
             </TouchableOpacity>
+            {/* <Button title='Login' onPress={navigation.navigate('Login')} /> */}
             <br></br>
             <Text  style={styles.text} onPress={() =>navigation.navigate('Register')}>Not registerd? <Text style={styles.link}>Register here </Text> 
         </Text>

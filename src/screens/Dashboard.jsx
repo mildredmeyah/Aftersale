@@ -1,193 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
-import { useNavigation } from "@react-navigation/native";
-import Header from '../components/Header';
-//import AddProduct from './addProduct';
 
-// import React from 'react';
-// import{ StyleSheet,
-// 		Text,
-// 		View,
-// 		FlatList,
-//         TextInput,Image
-// 	} from 'react-native';
-// import { AddCircle, Visibility,AccountCircle } from '@mui/icons-material';
-// import SearchBar from 'react-native-elements/dist/searchbar/SearchBar-default';
-
-// import DATA from '../config/market/DATA'
-
-
-// // const DATA = [
-// // {
-// // 	id:"1",
-// // 	title:"Apples",
-
-
-
-
-// // },
-// // {
-// // 	id:"2",
-// // 	title:"Go slow",
-// // 	title:"Spinach",
-// //     remaining:"10  reamaining",
-// //     profit:"R10 profit"
-// // },
-// // {
-// // 	id:"3",
-// // 	title:"Bananas",
-// // 	title:"Spinach",
-// //     remaining:"40  reamaining",
-// //     profit:"R50 profit"
-// // },
-// // {
-// // 	id:"4",
-// // 	title:"Spinach",
-// //     remaining:"0  reamaining",
-// //     profit:"R150 profit",
-
-// // },
-
-
-
-// // ];
-
-// const Item = ({title,profit}) => {
-// return(
-// 	<View style={styles.item}  >
-// 		<View>
-
-
-
-// 		</View>
-// 		<View style={styles.eye}>
-
-// 	<Visibility/>
-// 	</View>
-
-// 	<Text>{title}</Text>
-// 	<Text>{profit}</Text>
-// 	{/* <Text>{remainig}</Text> */}
-
-
-
-// 	</View>
-// );
-// }
-
-
-// export default function App() {
-
-
-// const renderItem = ({item})=>(
-// <Item title={item.title}/>
-
-
-
-
-
-
-// );
-// // const render=({item})=>(
-// // 	<Item title={item.remaining}/>
-// // )
-// return (
-// <View style={styles.container}>
-
-//     <View>
-//  <Text >Stats</Text>
-
-// 	<Text  style = {{ marginLeft : 150, color : '#96DED1',paddingLeft:140, textDecorationLine:'underline' }}>see all</Text>
-
-//     </View>
-// 	<View style={styles.total}>
-// 		<Text>TOTAL INCOME</Text>
-// 		<Text>R1400</Text>
-// <Image source={{uri:'https://cdn-icons-png.flaticon.com/128/5116/5116338.png'}} style={{width:30, height:30}}
-// />
-// 		<Text>30% Increase From Last Month</Text>
-// 	</View>
-// 	<View style={styles.stock}>
-// 		<Text>STOCK</Text>
-// 		<Image source={{uri:'https://cdn-icons-png.flaticon.com/128/7125/7125797.png'}} style={{width:30, height:30}}
-// />
-// 		<Text>R3</Text>
-// 		<Text>Need More Stock</Text>
-// 	</View>
-{/* <SearchBar
-    placeholder="Type Here..."
-    lightTheme
-    round
-    autoCorrect={false} 
-
-   
-/> */}
-// 	<FlatList
-// 	data={DATA}
-// 	renderItem={renderItem}
-// 	keyExtractor={item => item.id}
-
-
-// 	/>
-
-//     <View style={styles.add}>
-//    <AddCircle />
-//    </View>
-
-// </View>
-// );
-// }
-
-// const styles = StyleSheet.create({
-// container: {
-//     backgroundColor:'#fff',
-
-// 	padding:2,
-// 	maxWidth:1000,
-
-// 	maxHeight:840,
-//     maxWidth:1000,
-//     height:896,
-//     width:424,
-// },
-// item: {
-// 	backgroundColor: '#DFF1F3',
-// 	padding: 20,
-// 	marginVertical: 8,
-// 	marginHorizontal: 16,
-//     borderRadius:10
-// },
-// input: {
-//     height: 40,
-//     margin: 12,
-//     borderWidth: 1,
-//     padding: 10,
-//     borderRadius:10
-//   },
-//   add:{
-// 	paddingLeft:330,
-// 	color:'#96DED1',
-
-//   },
-//   eye:{
-// 	color:'black',
-// // 	paddingBottom:100,
-// //   paddingLeft:250,
-//     marginLeft:250,
-
-
-
-
-//   },
-//   total:{
-// 	backgroundColor:"green"
-//   },
-//   stock:{
-// 	backgroundColor:'#fff',
-//   }
-
-
-// });
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -196,6 +7,7 @@ import img1 from "../../assets/pictures/appless.jpeg"
 import img2 from '../../assets/pictures/bananas.webp';
 import SearchBar from 'react-native-elements/dist/searchbar/SearchBar-default';
 import { Feather } from '@expo/vector-icons';
+import { TextInput } from 'react-native-web';
 
 
 
@@ -213,12 +25,16 @@ const DashBoard = ({ navigation }) => {
 
 			</View>
 
+<br></br>
+<br></br>
+<br></br>
 			<View style={styles.stats}>
 				
 					<Text >Stats</Text>
 					 <TouchableOpacity
+					
 					onPress={() => alert('Navigate to the view all products')}
-				><Text style={styles.seeAll}>see all</Text>
+				><Text style={{color:'#96DED1',textDecorationLine: 'underline' }}>see all</Text>
 				</TouchableOpacity>
 			</View>
 
@@ -245,18 +61,27 @@ const DashBoard = ({ navigation }) => {
 			<br></br>
 			<br></br>
 			<View style={styles.SearchBar}>
-				<SearchBar
+				{/* <SearchBar
 					placeholder="Type Here..."
 					lightTheme
 					round
 					autoCorrect={false}
-				/>
+				/> */}
+									<TextInput placeholder='search here' style={styles.place}  />
+					<TouchableOpacity
+					onPress={() => alert('Navigate to the search  part')}
+					style={styles.icon}>
+						<Feather name="search" size={18} color="white" />
+				
+				</TouchableOpacity>
+			
 			</View>
 
 
 			<View style={styles.productCard}>
 				<TouchableOpacity
-					onPress={() => alert('Navigate to the product details page')}
+				
+					onPress={() => navigation.navigate('ProfileScreen')} 
 					style={styles.view}>
 					<Feather name="eye" size={16} color="white" />
 					{/* <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text> */}
@@ -275,14 +100,14 @@ const DashBoard = ({ navigation }) => {
 				</View>
 				<View style={styles.textBox}>
 					<Text>Product name</Text>
-					<Text>Product Name</Text>
-					<Text>Product Name</Text>
+					<Text>Remaining</Text>
+					<Text>Profit</Text>
 				</View>
 			</View>
 			<TouchableOpacity
 				onPress={() => alert('Navigate to the add product page')}
 				style={styles.add}>
-				<Feather name="plus" size={30} color="#fff" />
+				<Feather name="plus" size={30} color="black" />
 				{/* <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text> */}
 			</TouchableOpacity>
 		</View>
@@ -306,6 +131,15 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
+	SearchBar:{
+		borderRadius: '10px',
+		margin: '16px',
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		
+	},
 	view: {
 		content: "",
 		position: 'absolute',
@@ -321,6 +155,29 @@ const styles = StyleSheet.create({
 		alignContent: 'center',
 		display: 'flex',
 	},
+place:{
+	fontSize: 20,
+		 color: 'black',
+		 width:353,
+		 height:50 ,
+		 padding:20,
+		 backgroundColor:'#D8D8D8',
+		 borderRadius:10,
+		
+
+},
+	icon:{
+		content: "",
+		left: "-45px",
+		width: "45px",
+		height: "48px",
+		borderRadius: "10%",
+		backgroundColor: "#96DED1",
+		justifyContent: 'center',
+		alignItems: 'center',
+		alignContent: 'center',
+		display: 'flex',
+	},
 	imgBox: {
 		height: 80,
 		width: 90,
@@ -330,8 +187,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		flex: 1,
-
-
 	},
 	textBox: {
 		display: 'flex',
@@ -347,43 +202,58 @@ const styles = StyleSheet.create({
 		width: "40px",
 		height: "40px",
 		borderRadius: "50%",
-		backgroundColor: "#070627",
+		backgroundColor: "#96DED1",
 		justifyContent: 'center',
 		alignItems: 'center',
 		alignContent: 'center',
 		display: 'flex',
+		
+	},
+	profile:{
+		content: "",
+		position: 'absolute',
+		top: "-0px",
+		right: "-1px",
+		transform: [{ translate: "10%" }],
+		width: "40px",
+		height: "40px",
+		borderRadius: "50%",
+		backgroundColor: "#070627",
+		justifyContent: 'center',
+		alignItems: 'center',
+		alignContent: 'center',
+	
 	},
 	details:{
 		display:'flex',
 		flexDirection:'row',
-		justifyContent:'space-between'
+		justifyContent:'space-between',
+	
 	},
 	Total:{
-		height: 110,
-		 width: 150,
-		  borderWidth: 0.5,
-		//  borderColor: 'black',
 		  backgroundColor: 'white', 
 		  borderRadius: 10,
-		  boxshadow: '10px 10px 5px lightblue',
+		  shadowColor: '#171717',
+		  boxShadow: '4px 4px 4px 4px gray',
+		  margin: '16px',
+		//   shadowOffset: {width: 5, height: 4},
+		//   shadowOpacity: 0.2,
+		//   shadowRadius: 3,
+		//   justifyContent:'center',
+	
 	},
 	stock:{ 
 		height: 110,
 		 width: 130,
 		  marginLeft: 20, 
-		  borderWidth: 0.5,
-		//    borderColor: 'black', 
+		  borderRadius: 10,
 		   backgroundColor: 'white',
-		    borderRadius: 10
+		   boxShadow: '4px 4px 4px 4px gray',
+		   margin: '16px',
 		},
-		seeAll:{ 
-			color: '#96DED1',
-		
-		 marginLeft: 20,
-		  textDecorationLine: 'underline' 
-		},
+	
 		stats:{
-			marginRight:20,
+			margin:'16px',
 			display:'flex',
 			flexDirection:'row',
 			justifyContent:'space-between'
