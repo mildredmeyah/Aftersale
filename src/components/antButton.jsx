@@ -4,11 +4,17 @@ import { View, Text, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 // create a component
-const RoundBtn = ({antIconName, size, color}) => {
+const RoundBtn = ({ antIconName, size, color, style, onPress }) => {
     return (
-        <AntDesign name={antIconName} size={size || 24} color={color} />
+      <AntDesign
+        name={antIconName}
+        size={size || 24}
+        color={color}
+        style={[style.icon, { ...style }]}
+        onPress={onPress}
+        />
     )
-};
+  };
 
 // define your styles
 const styles = StyleSheet.create({
