@@ -9,7 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@ant-design/react-native": "^5.0.2",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@expo/vector-icons": "^13.0.0",
